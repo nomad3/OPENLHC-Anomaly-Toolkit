@@ -391,3 +391,30 @@ Apache-2.0. See `LICENSE`.
 Thanks to the open-data and Scikit-HEP communities for the tools that make public HEP analysis possible.
 
 ---
+
+## 🐳 Docker
+
+Build and run the Streamlit app:
+
+```bash
+# Build
+docker compose build
+
+# Run (http://localhost:8501)
+docker compose up -d
+```
+
+Train/Evaluate inside the container:
+
+```bash
+docker compose exec web bash -lc "python backend/train.py \
+  --data-config configs/cms_config.yaml \
+  --model-config configs/model_config.yaml \
+  --outdir results/runs/olat_demo_run && \
+python backend/evaluate.py \
+  --run-dir results/runs/olat_demo_run \
+  --outdir results/plots/olat_demo_run \
+  --append-leaderboard results/leaderboard.json"
+```
+
+Data and results are mounted from `./data` and `./results`.
