@@ -1,0 +1,14 @@
+dataset_name: "cms_open_data_minimal"
+root_files: []  # e.g., ["data/cms/DoubleMuon.root"] or remote URLs
+features:
+  - "pho1_pt"
+  - "pho2_pt"
+  - "diphoton_mass"
+  - "jet_n"
+  - "met"
+split:
+  train: 0.7
+  val: 0.15
+  test: 0.15
+cache_parquet: "data/processed/cms_minimal.parquet"
+max_events: 50000  # optional cap; set null for all

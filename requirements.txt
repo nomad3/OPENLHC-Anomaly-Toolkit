@@ -1,0 +1,12 @@
+uproot>=5.3
+awkward>=2.6
+numpy>=1.26
+pandas>=2.2
+scikit-learn>=1.5
+matplotlib>=3.8
+plotly>=5.20
+streamlit>=1.36
+pyyaml>=6.0
+tqdm>=4.66
+joblib>=1.4
+torch>=2.3    # or tensorflow>=2.16 (choose one framework)

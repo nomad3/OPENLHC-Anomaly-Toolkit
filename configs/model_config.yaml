@@ -1,0 +1,28 @@
+model: "autoencoder"   # options: pca, iforest, ae, vae
+seed: 42
+
+pca:
+  n_components: 4
+
+iforest:
+  n_estimators: 200
+  max_samples: "auto"
+  contamination: 0.01
+
+ae:
+  framework: "torch"
+  hidden_dims: [64, 32, 16, 32, 64]
+  activation: "relu"
+  dropout: 0.0
+  lr: 1.0e-3
+  batch_size: 256
+  epochs: 20
+
+vae:
+  framework: "torch"
+  hidden_dims: [64, 32]
+  latent_dim: 8
+  beta: 1.0
+  lr: 1.0e-3
+  batch_size: 256
+  epochs: 30
